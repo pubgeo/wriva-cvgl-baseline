@@ -1,0 +1,30 @@
+{
+  "data": {
+    "txt_file": "/home/yejz1/wriva/data/260406_CVGL_DEV_colmap/WRIVA-CVGL-DEV-003/registration/camera_clusters.txt",
+    "image_base_dir": "/home/yejz1/wriva/data/WRIVA-CVGL-Datasets-V3/",
+    "site_ids": null,
+    "sat_chip_size": 160,
+    "ground_image_size": 224,
+    "overlap_ratio": 0.65,
+    "sat_sampling_window_px": [840, 840],
+    "has_header": true,
+    "delimiter": "\t"
+  },
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 1,
+    "num_workers": 2
+  },
+  "model": {
+    "model_type": "flex_geo_dinov3_posloss_v2",
+    "model_root": "/home/yejz1/wriva/CVGL/trained_models/example_models_flex_geo_dinov3_posloss/flex_geo_dinov3_posloss_trainvisym_1query_v2",
+    "config_filename": "config",
+    "checkpoint_name": "best.pt"
+  },
+  "output": {
+    "base_dir": "/home/yejz1/wriva/CVGL/inference_outputs",
+    "top_k_sat_chips": 10,
+    "top_k_satellites": 3,
+    "score_reduction": "max"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "global": {
+    "dataset_root": "/home/yejz1/wriva/data/WRIVA-CVGL-Datasets-V3/WRIVA-CVGL-DEV-003",
+    "output_root": "/home/yejz1/wriva/CVGL/inference_outputs/test_full_pipeline",
+    "registration_subdir_name": "registration",
+    "camera_clusters_filename": "camera_clusters.txt",
+    "retrieval_dir_name": "retrieval_all_sat",
+    "postsum_dir_name": "neighbor_postsum_all_sat",
+    "eval_dir_name": "evaluation_against_gt",
+    "reference_dir_name": "reference",
+    "ground_dir_candidates": ["ground", "image"],
+    "satellite_dir_candidates": ["maxar"]
+  },
+
+  "infer_tiles": {
+    "data": {
+      "image_base_dir": "/home/yejz1/wriva/data/WRIVA-CVGL-Datasets-V3/",
+      "sat_chip_size": 160,
+      "ground_image_size": 224,
+      "overlap_ratio": 0.5,
+      "sat_sampling_window_px": [840, 840],
+      "has_header": true,
+      "delimiter": "\t"
+    },
+
+    "runtime": {
+      "device": "cuda",
+      "batch_size": 1,
+      "num_workers": 2
+    },
+
+    "model": {
+      "model_type": "flex_geo_dinov3_posloss_v2",
+      "model_root": "example_pretrained_model",
+      "config_filename": "config",
+      "checkpoint_name": "best.pt"
+    },
+
+    "output": {
+      "top_k_sat_chips": 10,
+      "top_k_satellites": 3,
+      "score_reduction": "max",
+      "save_topk_chips_for_top_satellites_only": false
+    }
+  },
+
+  "prepare_camera_clusters": {
+    "force": false,
+    "num_matched": 60,
+    "match_threshold": 0.3,
+    "min_match_score": 0.25,
+    "skip_geometric_verification": false,
+    "cluster_size": 8,
+    "cluster_source": "filename_order",
+    "cluster_view_soft_angle_deg": 20.0,
+    "cluster_view_hard_angle_deg": 30.0
+  },
+
+  "infer_tiles_neighbor_postsum": {
+    "neighbor_mode": "order_window",
+    "neighbor_search_radius": 20.0,
+    "order_neighbor_before": 5,
+    "order_neighbor_after": 5
+  },
+
+  "evaluate_cluster_predictions_against_gt": {
+    "eval_ks": [1, 3, 5, 10]
+  }
+}

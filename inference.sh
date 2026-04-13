@@ -1,0 +1,1 @@
+python infer_tiles.py --config inference_configs/infer_tiles.json

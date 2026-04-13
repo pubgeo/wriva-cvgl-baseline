@@ -1,0 +1,117 @@
+# =========================
+# Python cache & bytecode
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Logs & outputs
+# =========================
+output_plots
+example_pretrained_model/
+archive/
+splits/splits
+train_cfg
+logs/
+*.log
+output/
+outputs/
+results/
+*.out
+*.err
+
+# =========================
+# Data files (often large)
+# =========================
+data/
+datasets/
+*.csv
+*.tsv
+*.h5
+*.hdf5
+*.parquet
+*.feather
+
+# =========================
+# Model files (large)
+# =========================
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pb
+*.joblib
+*.pkl
+
+# =========================
+# Images & media outputs
+# =========================
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.mp4
+*.avi
+
+# =========================
+# Build / packaging
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.swp
+*~
+
+# =========================
+# Large file catch-all (optional)
+# =========================
+# Uncomment if you want to aggressively block large binaries
+# *.zip
+# *.tar
+# *.gz
+# *.7z
+# *.npy
+# *.npz
+
+# =========================
+# Secrets / configs
+# =========================
+.env
+.env.*
+*.key
+*.pem

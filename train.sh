@@ -1,0 +1,22 @@
+MODEL_TYPE=flex_geo_dinov3_posloss
+CUDA_VISIBLE_DEVICES=0,1 torchrun --standalone --nnodes=1 --nproc_per_node=2 train.py \
+  --model_type "$MODEL_TYPE" \
+  --data_mode "manifest" \
+  --train_manifest /home/yejz1/wriva/CVGL/src/splits/splits/visym/train_manifest.pkl \
+  --val_manifest /home/yejz1/wriva/CVGL/src/splits/splits/visym/val_manifest.pkl \
+  --output_dir /home/yejz1/wriva/CVGL/trained_models/example_models_${MODEL_TYPE}/${MODEL_TYPE}_trainvisym_8query \
+  --n_query 8 \
+  --epochs 80 \
+  --batch_size 300 --val_batch_size 64 --grad_accum_steps 1 --num_workers 4 --prefetch_factor 2 \
+  --lr 1e-6 --min_lr 1e-7 --warmup_epochs 0 \
+  --freeze_backbone_stages 12 --freeze_backbone_epochs 0 \
+  --n_sat 16 --negative_min_distance_px 120 --negative_local_window_px 600 \
+  --sat_chip_size 160 --sat_chip_sizes 160 --sat_image_size 160 \
+  --retrieval_only_warmup_epochs 6 --aux_warmup_epochs 6 \
+  --pos_weight 0.2 --pos_loss_type reg --pos_reg_loss smooth_l1 --pos_reg_beta 0.2 \
+  --pos_head_variant sat_token_heatmap --pos_head_hidden_dim 1024 --pos_head_depth 2 \
+  --separate_pos_neck \
+  --single_weight 0.5 --no-ial \
+  --pos_center_jitter_px 8 \
+  --early_stop_patience 12 --early_stop_min_delta 0.001 \
+  --monitor_metric r1

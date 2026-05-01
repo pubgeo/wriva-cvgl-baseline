@@ -1,0 +1,86 @@
+version: '2'
+title: CVGL Challenge 2026
+description: ...
+image: logo2.jpg
+has_registration: False
+docker_image: "jkcarney1/cvgl-test:latest"
+terms: terms.md
+
+pages:
+- title: Overview
+  file: overview.md
+- title: Evaluation
+  file: evaluation.md
+- title: Data
+  file: data.md
+- title: Acknowledgements
+  file: acknowledgements.md
+
+tasks:
+- index: 0
+  name: Development Task
+  description: Test for WRIVA public challenge...
+  is_public: false
+  reference_data: WRIVA-CVGL-DEV-ONLY-REFERENCE.zip
+  scoring_program: program.zip
+solutions: []
+phases:
+- index: 0
+  name: Development
+  description: re-update
+  start: '2026-04-23'
+  end: '2026-05-30'
+  max_submissions_per_day: 10
+  max_submissions: 1000
+  execution_time_limit: 3600
+  auto_migrate_to_this_phase: false
+  hide_output: false
+  tasks:
+  - 0
+  solutions: []
+  
+leaderboards:
+- index: 0
+  title: RESULTS
+  key: RESULTS
+  hidden: false
+  submission_rule: Add
+  columns:
+  - title: dev-001-geo-rmse-se90
+    key: dev-001-geo-rmse-se90
+    index: 0
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: dev-002-geo-rmse-se90
+    key: dev-002-geo-rmse-se90
+    index: 1
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: dev-003-geo-rmse-se90
+    key: dev-003-geo-rmse-se90
+    index: 2
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: dev-001-heading-rmse-se90
+    key: dev-001-heading-rmse-se90
+    index: 3
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: dev-002-heading-rmse-se90
+    key: dev-002-heading-rmse-se90
+    index: 4
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: dev-003-heading-rmse-se90
+    key: dev-003-heading-rmse-se90
+    index: 5
+    sorting: desc
+    hidden: true
+    precision: 2
+
+

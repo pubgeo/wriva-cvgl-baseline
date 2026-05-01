@@ -1,0 +1,2 @@
+<h3>Acknowledgements</h3>
+<p>This work was supported by the Intelligence Advanced Research Projects Activity (IARPA) Walk-through Rendering from Images of Varying Altitude (WRIVA) program. Disclaimer: The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of IARPA or the U.S. Government.</p>

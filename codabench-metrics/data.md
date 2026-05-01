@@ -1,0 +1,13 @@
+<h3>Data</h3>
+<p>
+WRIVA-CVGL-DEV: Images collected for the IARPA WRIVA program have been publicly released and made available for use in this public challenge and more broadly to encourage research in cross-view camera calibration, geo-localization, and view synthesis methods for real-world environments and heterogeneous cameras. Ground-level images were collected using a variety of cameras equipped with RTK-capable GPS receivers. Cameras were calibrated using structure from motion constrained by RTK-corrected GPS coordinates, with positioning accuracies measured in centimeters. Orthorectified satellite images are (c) 2026 Maxar. A sample of WRIVA-CVGL datasets with reference metadata is provided to validate algorithms during the development phase. Challenge datasets from WRIVA-CVGL will be provided without metadata.
+
+VisymScenes-CVGL: Public datasets suitable for metric CVGL include DReSS, VIGOR, Ford-CVL, and KITTI-CVL, among others. These datasets provide satellite images from Google or ESRI and ground level panoramas or individual image frames, each with reasonably accurate camera location metadata. Ground-level photos tend to be taken from street view, which may not be representative of use with hand-held photography. Satellite images tend to be of high visual quality taken in temperate seasons, which may not be representative of timely satellite images available in practice. To provide additional, more representative data for our task, we provide multiple orthorectified satellite images from (c) 2026 Maxar to augment the large-scale public VisymScenes hand-held photography dataset (https://huggingface.co/datasets/doppelgangers25/VisymScenes). Camera location accuracies as reported from the mobile phones used to collect the images are indicated in the VisymScenes image metadata. Participants in the challenge may use any publicly available data to develop their algorithms.
+
+NOTE: We discovered that the following Visym datasets provided do not have the correct overlapping satellite images and should have been excluded from the sites posted. Please either check for overlap in your code or exclude the following: 37, 41, 42, 43, 44, 45, 46, 47, 48, 65, 67, 80, 83, 88, 93, 96, 99, 100, 102, 106, 119, 122.
+
+Caveat: Satellite image metadata for WRIVA-CVGL-DEV and VisymScenes-CVGL have not been bundle adjusted or refined with ground control. Absolute and relative accuracy is expected to be within a few meters. This will limit accuracy of metrics calculations for the development datasets to no better than a few meters.
+
+Data is available on [**IEEE DataPort**](https://ieee-dataport.org/competitions/wriva-cvgl-challenge-2026).
+
+</p>

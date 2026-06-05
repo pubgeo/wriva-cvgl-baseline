@@ -25,21 +25,21 @@ To create your zip file that is uploaded to Codabench, please organize your fold
 
 ```
 submission/
-├─ WRIVA-CVGL-DEV-001/
+├─ WRIVA-CVGL-TEST-001/
 │  ├─ *.json
 │  ├─ ...
-├─ WRIVA-CVGL-DEV-002/
+├─ WRIVA-CVGL-TEST-002/
 │  ├─ *.json
 │  ├─ ...
-├─ WRIVA-CVGL-DEV-003/
+├─ WRIVA-CVGL-TEST-003/
 │  ├─ *.json
 │  ├─ ...
 ```
 
-- The different folders within submission (ie, `WRIVA-CVGL-DEV-001/`) represent each dataset you will submit for. 
+- The different folders within submission (ie, `WRIVA-CVGL-TEST-001/`) represent each dataset you will submit for. 
 - These folders will contain your JSON files for each dataset. These JSON files must match the requested names exactly in order to properly correlate reference to submission.
 - **When submitting to Codabench, do NOT zip a high level folder containing each dataset. Zip each dataset folder individually. For example:**
-  - **CORRECT**: `zip -r submission.zip WRIVA-CVGL-DEV-001/ WRIVA-CVGL-DEV-002/ WRIVA-CVGL-DEV-003/`
+  - **CORRECT**: `zip -r submission.zip WRIVA-CVGL-TEST-0*/` (note the wildcard)
   - **INCORRECT**: `zip -r submission.zip submission/` 
 
 ## Expected JSON format

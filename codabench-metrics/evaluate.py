@@ -174,13 +174,15 @@ if __name__ == "__main__":
 
     reference_datasets = sorted(os.listdir(reference_path))
     summary_results = {}
+    frame_scores = {}
+    geo_scores = []
 
     for dataset in reference_datasets:
         print(f"Evaluating dataset {dataset}")
         dataset_reference_path = os.path.join(reference_path, dataset)
-        # turns, for example, WRIVA-CVGL-DEV-001 -> dev-001-geo-rmse-se90 for leaderboard key
-        dataset_leaderboard_geo_name = "-".join(dataset.split("-")[2:4]).lower() + "-geo-rmse-se90"
-        dataset_leaderboard_heading_name = "-".join(dataset.split("-")[2:4]).lower() + "-heading-rmse-se90"
+        # turns, for example, WRIVA-CVGL-TEST-001 -> 001-geo-rmse-se90 for leaderboard key
+        dataset_leaderboard_geo_name = "-".join(dataset.split("-")[3:4]).lower() + "-geo-rmse-se90"
+        dataset_leaderboard_heading_name = "-".join(dataset.split("-")[3:4]).lower() + "-heading-rmse-se90"
 
         reference_metadata = load_metadata(os.path.join(dataset_reference_path, "reference"))
         submission_metadata = load_metadata(os.path.join(submission_path, dataset))
@@ -209,7 +211,10 @@ if __name__ == "__main__":
             for lat, lon in sub_coords
         ])
         rmses = np.sqrt(((ref_coords_enu - sub_coords_enu) ** 2).sum(axis=1))
-        summary_results[dataset_leaderboard_geo_name] = np.percentile(rmses, 90)
+        frame_scores[dataset] = {k: float(rmse) for k, rmse in zip(ks, rmses)}
+        geo_score = np.percentile(rmses, 90)
+        summary_results[dataset_leaderboard_geo_name] = geo_score
+        geo_scores.append(geo_score)
 
         if all("heading" in sub_keys and "pitch" in sub_keys for sub_keys in submission_metadata.values()):
             ref_opk = np.array([
@@ -234,13 +239,18 @@ if __name__ == "__main__":
             heading_rmses = np.sqrt(((ref_ypr - sub_ypr) ** 2).sum(axis=1))
             summary_results[dataset_leaderboard_heading_name] = np.percentile(heading_rmses, 90)
         else:
-            summary_results[dataset_leaderboard_geo_name] = 0.0
+            summary_results[dataset_leaderboard_heading_name] = 0.0
+
+    summary_results = {"avg-geo-rmse-se90": np.mean(geo_scores), **summary_results}
 
     print('Writing scores...')
     fid = open(os.path.join(output_path, 'scores.txt'), "w")
     for key, score in summary_results.items():
         fid.write(f"{key}: {score}\n")
     fid.close()
+
+    with open(os.path.join(output_path, 'frame_scores.json'), "w") as f:
+        json.dump(frame_scores, f, indent=2)
 
     end = time.time()
     print(f'Finished. Time to complete: {end - start} seconds.')

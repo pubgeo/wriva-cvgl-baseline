@@ -18,7 +18,7 @@ $(PROGRAM_ZIP): $(PROGRAM_FILES)
 # Rule to zip everything in the directory, including the created zip files
 $(TOP_ZIP): $(DIR_ZIPS) $(PROGRAM_ZIP)
 	@echo "Zipping all files into $(TOP_ZIP)..."
-	zip -r $(TOP_ZIP) *.md *.py *.jpg metadata *.yaml WRIVA-CVGL-DEV-ONLY-REFERENCE.zip $(DIR_ZIPS) $(PROGRAM_ZIP)
+	zip -r $(TOP_ZIP) *.md *.py *.jpg metadata *.yaml WRIVA_CVGL_TEST_FINAL_REFERENCE.zip $(DIR_ZIPS) $(PROGRAM_ZIP)
 
 # Clean up all zip files
 clean:

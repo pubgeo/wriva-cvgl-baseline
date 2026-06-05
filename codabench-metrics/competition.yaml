@@ -18,10 +18,10 @@ pages:
 
 tasks:
 - index: 0
-  name: Development Task
-  description: Test for WRIVA public challenge...
+  name: Test Phase Task
+  description: Test phase for CVGL
   is_public: false
-  reference_data: WRIVA-CVGL-DEV-ONLY-REFERENCE.zip
+  reference_data: WRIVA_CVGL_TEST_FINAL_REFERENCE.zip
   scoring_program: program.zip
 solutions: []
 phases:
@@ -46,41 +46,153 @@ leaderboards:
   hidden: false
   submission_rule: Add
   columns:
-  - title: dev-001-geo-rmse-se90
-    key: dev-001-geo-rmse-se90
+  - title: avg-geo
+    key: avg-geo-rmse-se90
     index: 0
     sorting: desc
     hidden: false
     precision: 2
-  - title: dev-002-geo-rmse-se90
-    key: dev-002-geo-rmse-se90
+  - title: 001-geo
+    key: 001-geo-rmse-se90
     index: 1
     sorting: desc
     hidden: false
     precision: 2
-  - title: dev-003-geo-rmse-se90
-    key: dev-003-geo-rmse-se90
+  - title: 002-geo
+    key: 002-geo-rmse-se90
     index: 2
     sorting: desc
     hidden: false
     precision: 2
-  - title: dev-001-heading-rmse-se90
-    key: dev-001-heading-rmse-se90
+  - title: 003-geo
+    key: 003-geo-rmse-se90
     index: 3
     sorting: desc
-    hidden: true
+    hidden: false
     precision: 2
-  - title: dev-002-heading-rmse-se90
-    key: dev-002-heading-rmse-se90
+  - title: 004-geo
+    key: 004-geo-rmse-se90
     index: 4
     sorting: desc
-    hidden: true
+    hidden: false
     precision: 2
-  - title: dev-003-heading-rmse-se90
-    key: dev-003-heading-rmse-se90
+  - title: 005-geo
+    key: 005-geo-rmse-se90
     index: 5
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: 006-geo
+    key: 006-geo-rmse-se90
+    index: 6
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: 007-geo
+    key: 007-geo-rmse-se90
+    index: 7
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: 008-geo
+    key: 008-geo-rmse-se90
+    index: 8
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: 009-geo
+    key: 009-geo-rmse-se90
+    index: 9
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: 010-geo
+    key: 010-geo-rmse-se90
+    index: 10
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: 011-geo
+    key: 011-geo-rmse-se90
+    index: 11
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: 012-geo
+    key: 012-geo-rmse-se90
+    index: 12
+    sorting: desc
+    hidden: false
+    precision: 2
+  - title: 001-heading
+    key: 001-heading-rmse-se90
+    index: 13
     sorting: desc
     hidden: true
     precision: 2
-
-
+  - title: 002-heading
+    key: 002-heading-rmse-se90
+    index: 14
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: 003-heading
+    key: 003-heading-rmse-se90
+    index: 15
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: 004-heading
+    key: 004-heading-rmse-se90
+    index: 16
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: 005-heading
+    key: 005-heading-rmse-se90
+    index: 17
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: 006-heading
+    key: 006-heading-rmse-se90
+    index: 18
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: 007-heading
+    key: 007-heading-rmse-se90
+    index: 19
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: 008-heading
+    key: 008-heading-rmse-se90
+    index: 20
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: 009-heading
+    key: 009-heading-rmse-se90
+    index: 21
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: 010-heading
+    key: 010-heading-rmse-se90
+    index: 22
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: 011-heading
+    key: 011-heading-rmse-se90
+    index: 23
+    sorting: desc
+    hidden: true
+    precision: 2
+  - title: 012-heading
+    key: 012-heading-rmse-se90
+    index: 24
+    sorting: desc
+    hidden: true
+    precision: 2
